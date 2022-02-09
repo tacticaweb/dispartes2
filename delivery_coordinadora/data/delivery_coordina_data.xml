@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="1">
+    <record id="coordina_box" model="stock.package.type">
+      <field name="name">coordina Custom Box</field>
+      <field name="max_weight">30.0</field>
+      <field name="package_carrier_type">coordina</field>
+    </record>
+    <record id="product_product_delivery_coordina_domestic" model="product.product">
+      <field name="name">Coordinadora Envio Express</field>
+      <field name="default_code">Delivery_001</field>
+      <field name="type">service</field>
+      <field name="categ_id" ref="delivery.product_category_deliveries"/>
+      <field name="sale_ok" eval="False"/>
+      <field name="purchase_ok" eval="False"/>
+      <field name="list_price">0.0</field>
+      <field name="invoice_policy">order</field>
+    </record>
+    <record id="delivery_carrier_coordina_domestic" model="delivery.carrier">
+      <field name="name">Coordinadora Envio Express</field>
+      <field name="product_id" ref="delivery_coordinadora.product_product_delivery_coordina_domestic"/>
+      <field name="delivery_type">coordina</field>
+      <field name="coordina_id">34419</field>
+      <field name="coordina_user">yesicav.ws</field>
+      <field name="coordina_pass">dad773d9a2875596fcd0cab5fbc2b361344eb560f650d4af3c0798aaf20f76b1</field>
+      <field name="coordina_delivery_type">Coordinadora Envio Express</field>
+      <field name="coordina_default_packaging_id" ref="delivery_coordinadora.coordina_box"/>
+    </record>
+  </data>
+</odoo>

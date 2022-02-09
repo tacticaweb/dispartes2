@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_milk_cotizador_user,milk_cotizador_user,model_milk_cotizador,milk_cotizador.group_cotizador_user,1,0,0,0
+access_milk_cotizador_manager,milk_cotizador_manager,model_milk_cotizador,milk_cotizador.group_cotizador_manager,1,1,1,1

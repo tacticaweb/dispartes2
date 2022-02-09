@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="0">
+    <template id="coordina_shipping_request" name="coordina shipping request">
+      <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://sandbox.coordinadora.com/agw/ws/guias/1.6/server.php" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+        <soapenv:Header/>
+		<soapenv:Body>
+			<ser:Guias_generarGuia>
+				<p>
+	              	<codigo_remision/>
+	              	<fecha/>
+	              	<id_cliente t-esc="id_cliente"/>
+	                <id_remitente/>
+	                <nit_remitente t-esc="sender['nit']"/>
+	                <nombre_remitente t-esc="sender['nombre']"/>
+	                <direccion_remitente t-esc="sender['streetName']"/>
+	                <telefono_remitente t-esc="sender['telefono']"/>
+	                <ciudad_remitente t-esc="sender['ciudad']"/>
+	              	<nit_destinatario t-esc="receiver['nit']"/>
+	              	<div_destinatario/>
+	              	<nombre_destinatario t-esc="receiver['nombre']"/>
+	              	<direccion_destinatario t-esc="receiver['streetName']"/>
+	              	<ciudad_destinatario t-esc="receiver['ciudad']"/>
+	              	<telefono_destinatario t-esc="receiver['telefono']"/>
+	              	<valor_declarado t-esc="valor"/>
+	              	<codigo_cuenta t-esc="codigo_cuenta"/>
+	              	<codigo_producto t-esc="codigo_producto"/>
+	              	<nivel_servicio t-esc="nivel_servicio"/>
+	              	<linea/>
+	              	<contenido t-esc="contenido"/>
+	              	<referencia t-esc="reference"/>
+	              	<observaciones t-esc="observaciones"/>
+	              	<estado>IMPRESO</estado>
+	              	<detalle>
+	              		<item>
+	              			<ubl>0</ubl>
+	              			<alto>1</alto>
+	              			<ancho>1</ancho>
+	              			<largo>1</largo>
+	              			<peso>1</peso>
+	              			<unidades>1</unidades>
+	              			<referencia t-esc="reference"/>
+	              			<nombre_empaque/>
+	          			</item>
+	          		</detalle>
+	              	<cuenta_contable/>
+	              	<centro_costos/>
+	              	<recaudos>
+	              		<item>
+	              			<referencia t-esc="reference"/>
+	              			<valor t-esc="valor"/>
+	              			<valor_base_iva/>
+	              			<valor_iva/>
+	              			<forma_pago t-esc="forma_pago"/>
+	            		</item>
+	          		</recaudos>
+	              	<margen_izquierdo/>
+	              	<margen_superior/>
+	              	<usuario_vmi/>
+	              	<formato_impresion/>
+	              	<atributo1_nombre/>
+	              	<atributo1_valor/>
+	              	<notificaciones/>
+	              	<atributos_retorno/>
+	              	<nro_doc_radicados/>
+	              	<nro_sobre/>
+	              	<usuario t-esc="carrier_user"/>
+	              	<clave t-esc="carrier_pass"/>
+              	</p>
+            </ser:Guias_generarGuia>
+         </soapenv:Body>
+       </soapenv:Envelope>     
+    </template>
+  </data>
+</odoo>

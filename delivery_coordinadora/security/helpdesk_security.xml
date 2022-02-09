@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="milk_cotizador.module_category_cotizador_management">
+        <field name="name">Cotizador</field>
+        <field name="description">Cotizador Mano de Obra</field>
+        <field name="sequence">14</field>
+    </record>
+
+    <record id="group_cotizador_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="milk_cotizador.module_category_cotizador_management"/>
+    </record>
+
+    <record id="group_cotizador_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="milk_cotizador.module_category_cotizador_management"/>
+        <field name="implied_ids" eval="[(4, ref('group_cotizador_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('milk_cotizador.group_cotizador_manager'))]"/>
+        </record>
+    </data>
+</odoo>
